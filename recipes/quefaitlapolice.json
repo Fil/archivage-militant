@@ -1,0 +1,9 @@
+{
+    "URL": "http:\/\/quefaitlapolice.samizdat.net\/",
+    "title": "Que fait la police ?",
+    "state": "stopped",
+    "pages": 500,
+    "volume": 50000,
+    "maintype": "texts",
+    "script": "php tools\/rss2files.php http:\/\/quefaitlapolice.samizdat.net\/?feed=rss2"
+}
