@@ -1,6 +1,9 @@
 Archivage militant
 ==================
 
+# De quoi s'agit-il ?
+
+voir http://lite2.framapad.org/p/archivage-militant
 
 # Utilisation
 
