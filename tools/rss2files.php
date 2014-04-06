@@ -44,7 +44,14 @@ function rss2files($feeds=array(), $desc = array()) {
 
 	// creer les pages
 	foreach ($feed->get_items() as $item) {
-		$link = $item->get_permalink();
+		$article = array();
+		$article['link'] = $item->get_permalink();
+		$article['title'] = $item->get_title();
+		$article['date'] = $item->get_date('Y-m-d H:i:s');
+		$article['description'] = $item->get_description();
+		$article['content'] = $item->get_content();
+		$article['tags'] = $item->get_item_tags();
+
 		$subdir = $item->get_date('Y/Y-m/');
 		if (!is_dir("$dir$subdir")) mkdir("$dir$subdir", 0777, true);
 
@@ -52,12 +59,6 @@ function rss2files($feeds=array(), $desc = array()) {
 		// TODO: supprimer un ventuel autre fichier ayant le mme permalink mais pas la meme date
 		// $idem = glob("$dir*/*/*-$uniq.json") etc
 
-		$article = array();
-		$article['title'] = $item->get_title();
-		$article['date'] = $item->get_date('Y-m-d H:i:s');
-		$article['description'] = $item->get_description();
-		$article['content'] = $item->get_content();
-		$article['tags'] = $item->get_item_tags();
 
 		$date = $item->get_date('YmdHis');
 		$f = "$dir$subdir$date-$uniq.json";
